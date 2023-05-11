@@ -1,0 +1,118 @@
+{% load static %}
+<div class="sticky-top" x-data="{ email: 'support@growth-delta.com', isCopied: false }">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+    <b class="container">
+      
+      <a class="navbar-brand" href="#">NOAH MORRIS</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Content
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark bg-black">
+              <li><a class="dropdown-item" href="#">About</a></li>
+              <li><a class="dropdown-item" href="#">Ai</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">
+              Engineering
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">
+              Securities
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">
+              Analytics
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">
+              Artificial Intelligence
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Apps
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark bg-black">
+              <li><a class="dropdown-item" href="#">Notes App</a></li>
+              <li><a class="dropdown-item" href="#">Recommend Retail Price</a></li>
+              <li><a class="dropdown-item" href="#">News Feeds</a></li>
+              <li><a class="dropdown-item" href="#">Markets</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              API
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark bg-black">
+              <li><a class="dropdown-item"  href="#" target="_blank" rel="noopener noreferrer">API: Document Links</a></li>
+              <li><a class="dropdown-item"  href="#" target="_blank" rel="noopener noreferrer">API: USA Business Cycle</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <ul class="navbar-nav me-end">
+
+          <li>
+            <div class="btn">
+              <a class="card-link" href="#">
+                <div class="card bg-info bg-opacity-75 p-1">
+                  <div class="fs-6 fw-bold">Technical Services <i class="fa-solid fa-briefcase"></i></div>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <div class="btn">
+              <a class="card-link" @click="navigator.clipboard.writeText(email); isCopied = true">
+                <div class="card bg-warning bg-opacity-75 p-1">
+                  <div class="fs-6 fw-bold">Contact <i class="fa-regular fa-envelope"></i></div>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <div class="btn">
+              <a class="card-link" href="#" target="_blank" rel="noopener noreferrer">
+                <div class="card bg-secondary bg-opacity-75 p-1">
+                  <div class="fs-6 fw-bold">GitHub <i class="fa-brands fa-github"></i></div>
+                </div>
+              </a>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </b>
+  </nav>
+  {% block messages %}
+    <template x-if="isCopied">
+      <div class="alert bg-success bg-opacity-75 alert-dismissible fade show" role="alert">
+        <div class="fs-6 fw-bolder text-center">My email address has been copied to your clipboard</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </template>
+  {% endblock messages %}
+</div>

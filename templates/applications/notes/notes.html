@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}
+  <!-- On Page META SEO -->
+  <title>{% block page_title %} Notes Application {% endblock %}</title>
+  <meta name="description" content="{% block description %} Notes App made using JavaScript and React.js & BootStrap {% endblock %}">
+  <meta name="keywords" content="{% block keywords %} Notes, React {% endblock %}">
+{% endblock meta %}
+
+{% block body %}
+  <div id="root"></div>
+{% endblock %}
+
+{% block page_js %}
+  <script type="text/javascript" src="{% static 'javascript/bundles/notes-bundle.js' %}"></script>
+{% endblock page_js %}
